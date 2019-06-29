@@ -12,7 +12,7 @@ Stay tuned for the next iteration of the application which will use the popular 
 
 ## Running the Application
 
-The application has been hosted [here.](https://fierce-forest-11043.herokuapp.com/) but it can also be run on a local server: PORT 8080.
+The application has been hosted [here.](https://gentle-eyrie-95201.herokuapp.com/) but it can also be run on a local server: PORT 8080.
 
 To run the application via a command line use:
 
