@@ -6,13 +6,13 @@ var burger = {
             cb(res)//call back function that is used on response
         })
     },
-    create: function (cols, vals, cb) {
-        ormObject.create(cols, vals, function (res) {
+    create: function (vals, cb) {
+        ormObject.create(vals, function (res) {
             cb(res);
         })
     },
-    update: function (objColVals, condition, cb) {
-        ormObject.update("burgers", objColVals, condition, function (res) {
+    update: function (condition, cb) {
+        ormObject.update(condition, function (res) {
             cb(res);
         });
     }

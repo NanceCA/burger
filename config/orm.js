@@ -1,8 +1,6 @@
 var connection = require("./connection.js");
 
 //methods to retrieve and store the data in the database
-
-//how do I module.export the object in the same line as the definiton?
 var ormObject = {
 
     //selectAll()
@@ -11,26 +9,21 @@ var ormObject = {
         connection.query(queryString, function (err, result) {
             if (err) throw err;
             cb(result)
-            console.log(result);
         })
     },
     //insertOne()
-    create: function (table, cols, vals, cb) {
-        var table = "burgers";
-        var queryString = ("INSERT INTO", table, "(?) values = ??");
-
+    create: function (vals, cb) {
+        var queryString = ("INSERT INTO burgers (burger_name, devoured) VALUES (?,?)");
         connection.query(queryString, vals, function (err, result) {
             if (err) throw err;
-            console.log(result);
-            cb(results);
+            cb(result);
         });
     },
     //updateOne()
-    update: function (table, objColVals, condition, cb) {
-        var queryString = ("UPDATE burgers SET ? = ?? WHERE ???");
-        connection.query(queryString, [input1], function (err, result) {
+    update: function (condition, cb) {
+        var queryString = ("UPDATE burgers SET devoured = true  WHERE id= ?");
+        connection.query(queryString, condition, function (err, result) {
             if (err) throw err;
-            console.log(result);
             cb(result);
         })
     }

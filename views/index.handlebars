@@ -1,4 +1,4 @@
-<img src"/assets/img/burger.png" alt"burger">
+{{!-- <img src="{{/assets/img/burger.png}}" alt"burger" style="display:flex"> --}}
 <h1>Burger Status!</h1>
 
 <div class="rows">
@@ -15,15 +15,15 @@
 
     </ul>
 
-
-
     <h4>Burgers that have been devoured!</h4>
-    {{#each burger}}
-    {{!-- {{#unless devoured}} --}}
-    <!--for each burger in the object list out the name -->
-    <li>{{burger_name}}</li>
-    {{!-- {{/unless}} --}}
-    {{/each}}
+    <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        <!--for each burger in the object list out the name -->
+        <li>{{burger_name}}</li>
+        {{/if}}
+        {{/each}}
+    </ul>
 
 </div>
 

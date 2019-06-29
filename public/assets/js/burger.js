@@ -3,19 +3,17 @@ $(function () {
     $(".change-state").on("click", function (event) {
 
         var id = $(this).data("id"); //grabbing the button id
-        var newState = true;
-
         var newDevouredState = {
-            devoured: newState
+            devoured: true,
+            burger_id: id
         }
 
         //Send PUT requests to change burger state
-        $.ajax("api/burgers/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newDevouredState
         }).then(
             function () {
-                console.log("changed devoured state to", newState)
                 //reload the page to get the updated list
                 location.reload();
             }
@@ -28,7 +26,6 @@ $(function () {
 
         var newBurger = {
             name: $("#b").val().trim(),
-            devouced: false
         };
 
         //validating form for clean entry
@@ -39,13 +36,11 @@ $(function () {
             }
             else {
                 //send POST request
-                $.ajax("api/burger", {
+                $.ajax("/api/burgers", {
                     type: "POST",
                     data: newBurger
-
                 }).then(
                     function () {
-                        console.log("created new burger", newBurger.name);
                         location.reload();
                     }
                 )
