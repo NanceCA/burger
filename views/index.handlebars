@@ -1,0 +1,38 @@
+<img src"/assets/img/burger.png" alt"burger">
+<h1>Burger Status!</h1>
+
+<div class="rows">
+    <h4>Burgers that have not been devoured</h4>
+
+    <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+        <!--for each burger in the object list out the name -->
+        <li>{{burger_name}}</li>
+        <button class="change-state" data-id="{{id}}">Devour </button>
+        {{/unless}}
+        {{/each}}
+
+    </ul>
+
+
+
+    <h4>Burgers that have been devoured!</h4>
+    {{#each burger}}
+    {{!-- {{#unless devoured}} --}}
+    <!--for each burger in the object list out the name -->
+    <li>{{burger_name}}</li>
+    {{!-- {{/unless}} --}}
+    {{/each}}
+
+</div>
+
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="b">Burger Name:</label>
+        <input type="text" id="b" name="name">
+    </div>
+    <button type="submit">Add Burger</button>
+
+</form>

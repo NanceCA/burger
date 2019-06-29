@@ -1,0 +1,27 @@
+body { 
+    background: lightsalmon;
+    
+}
+
+.rows {
+    display: flex;
+    flex-direction: row
+}
+
+.form-group {
+    margin-bottom: 5px;
+    display:flex;
+    flex-direction: center 
+  }
+
+.create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+
+li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+  }
