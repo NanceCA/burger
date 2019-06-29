@@ -5,7 +5,11 @@ body {
 
 .rows {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
+    align-content: stretch;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center
 }
 
 .form-group {
@@ -24,3 +28,20 @@ li {
     padding: 5px;
     margin: 5px;
   }
+
+.formHolder{
+    display:flex;
+    justify-content: center
+}
+
+#burger-photo{
+    /* display:flex; */
+    height: 50px;
+    /* position: relative;
+    left: 480px; */
+}
+
+.form-only{
+    display:flex;
+    justify-content:center
+}

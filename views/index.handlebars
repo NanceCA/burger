@@ -1,9 +1,15 @@
-{{!-- <img src="{{/assets/img/burger.png}}" alt"burger" style="display:flex"> --}}
 <h1>Burger Status!</h1>
+<p>Add your favorite burger using the form.<br> When you've devored it, click on the button to move it to the <strong>
+        'Burgers
+        have been devored' </strong>list! </p>
+<hr>
 
 <div class="rows">
-    <h4>Burgers that have not been devoured</h4>
+    <h4>Burgers that have not been devoured:</h4>
+    <h4>Burgers that have been devoured:</h4>
+</div>
 
+<div class="rows">
     <ul>
         {{#each burger}}
         {{#unless devoured}}
@@ -15,7 +21,6 @@
 
     </ul>
 
-    <h4>Burgers that have been devoured!</h4>
     <ul>
         {{#each burger}}
         {{#if devoured}}
@@ -27,12 +32,19 @@
 
 </div>
 
-<form class="create-form">
+<hr>
 
-    <div class="form-group">
-        <label for="b">Burger Name:</label>
-        <input type="text" id="b" name="name">
-    </div>
-    <button type="submit">Add Burger</button>
+<div class="formHolder">
+    <img id="burger-photo" src="/assets/img/burger.png" alt"burger">
 
-</form>
+    <form class="create-form">
+        <div class="form-group">
+            <label for="b">Burger Name:</label>
+            <input type="text" id="b" name="name">
+        </div>
+        <div class="form-only">
+            <button type="submit" class="formHolder">Add Burger</button>
+        </div>
+    </form>
+
+</div>

@@ -18,15 +18,13 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-    console.log("we got here")
+
     burger.create([req.body.name, false], function (result) {
         res.json({ id: result.insertID });
     });
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-    console.log(req.params.id)
-    console.log("we've made it to the controller")
 
     burger.update(req.params.id, function (result) {
         if (result.changedRows == 0) {
